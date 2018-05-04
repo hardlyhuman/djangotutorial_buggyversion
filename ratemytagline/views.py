@@ -5,11 +5,12 @@ from . models import tagLine
 def index(request):
     if request.POST:
         tagLine(tagline = request.POST.get("tagline",""),username = request.POST.get("name","")).save()
-    taglinesList =  #select all object from tagLine here
-
+    
+    #Fill your code below
+    #Hint: Get the list of tagLine objects, complete the context and render all the required objects.
+    
     context = {'taglines':''} #set taglinesList to the context so that the template engine can access it
 
-    return render(request,'ratemytagline/index.html') # something seems to be missing !!!
 
 def detail(request,id):
     try:
@@ -17,6 +18,7 @@ def detail(request,id):
     except:
         raise Http404("Tagline does not exist")
     if request.POST:
+        # Fill the gaps in between.
         tagline.numberOfVotes += 1
-        #What you save , is what you get
+        # Hint: What you save , is what you get
     return render(request,'ratemytagline/details.html',{'tagline':tagline})
