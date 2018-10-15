@@ -3,5 +3,5 @@ from django.urls import include, path
 
 #somethings not right here either. What are you waiting for? go ahead and fix it!
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', include(admin.site.urls)),
 ]
