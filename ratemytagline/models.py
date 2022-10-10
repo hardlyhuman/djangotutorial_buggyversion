@@ -9,7 +9,7 @@ class tagLine(models.Model):
     
     #isPopular doesnt seem to be right. Can you fix it?
     def isPopular(self):
-        if(self.numberOfVotes > 5):
+        if(self.numberOfVotes > 10):
             return False
         else:
             return True
